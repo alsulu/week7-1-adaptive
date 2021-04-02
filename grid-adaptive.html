@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @media screen and (min-width: 992px) {
+            p {
+                font-size: 1.3em;
+            }
+
+            #body {
+                display: grid;
+                grid-template-rows: 50px 300px 120px;
+                grid-template-columns: 70% 30%;
+                grid-template-areas: "header header"
+                "main aside"
+                "footer footer";
+        }
+        }
+
+        @media screen and (max-width: 991px) {
+            p {
+                font-size: 1em;
+            }
+
+            #body {
+                display: grid;
+                grid-template-rows: 5vh 45vh 30vh 20vh;
+                grid-template-areas: "header"
+            "main" 
+            "aside"
+            "footer";
+        }
+        }
+
+        #header {
+            display: grid;
+            grid-area: header;
+            background-color: rgb(224, 224, 224);
+            justify-content: center;
+            align-content: center;
+        }
+
+        #main {
+            display: grid;
+            grid-area: main;
+            background-color: rgb(255, 248, 227);
+            justify-items: center;
+            grid-gap: 15px;
+            padding: 25px 20px;
+        }
+        
+        @media screen and (max-width: 991px) {
+            #main {
+                grid-template-rows: 40% repeat(3, 1fr) ;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            #main {
+                grid-template-rows: 20% 10% 1fr 1fr 20px;
+                grid-template-columns: repeat(2, 1fr);
+        }
+
+            #title{
+                grid-area: 1/1/2/3;
+                margin: 0;
+        }
+
+            #one {
+                grid-area: 3/1/4/2;
+        }
+
+            #two {
+                grid-area: 3/2/4/3;
+        }
+
+            #three {
+                grid-area: 4/1/5/3;
+        }
+    }
+
+        article {
+            display: grid;
+            align-items: center;
+            background-color: rgb(254, 234, 185);
+            width: 100%;
+            text-align: center;
+        }
+
+        #aside {
+            display: grid;
+            grid-area: aside;
+            background-color: rgb(221, 236, 203);
+            justify-content: center;
+        }
+
+        #aside p {
+            margin-top: 25px;
+        }
+
+        #footer {
+            display: grid;
+            grid-area: footer;
+            grid-gap: 25px;
+            background-color: rgb(224, 224, 224);
+            padding: 25px 20px;
+        }
+
+        @media screen and (min-width: 992px) {
+            #footer {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            #footer {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+        }
+
+        section {
+            display: grid;
+            background-color: white;
+            width: 100%;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="body">
+        <header id="header"><p>[Шапка страницы]</p></header>
+        <main id="main">
+            <p id="title">[Основная часть]</p>
+            <article id="one"><p>[Ещё 1]</p></article>
+            <article id="two"><p>[Ещё 2]</p></article>
+            <article id="three"><p>[Ещё 3]</p></article>
+        </main>
+        <aside id="aside">
+            <p>[Боковая область]</p>
+        </aside>
+        <footer id="footer">
+            <section><p>[Секция футера 1]</p></section>
+            <section><p>[Секция футера 2]</p></section>
+            <section><p>[Секция футера 3]</p></section>
+            <section><p>[Секция футера 4]</p></section>
+        </footer>
+    </div>
+</body>
+</html>
